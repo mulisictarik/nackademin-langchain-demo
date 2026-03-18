@@ -1,33 +1,109 @@
-# LangChain Demo - Agent Examples
+# 🤖 AI Agents Project
 
-This project demonstrates various use cases and functionality in LangChain through practical agent examples.
+> A collection of intelligent, conversational AI agents built with **LangChain**, **LangGraph** and **Ollama** — each with a unique personality, purpose and set of tools.
 
-## Getting Started
+---
 
-### Prerequisites
-- Python 3.13
-- Ollama server with access to Llama models
+## ✨ Agents
 
-### Setup
+### 📚 Agent 1 — Study Assistant (Professor Hoof)
 
-1. Clone the project
-2. Create a virtual environment and install dependencies:
+> _"Learning made simple, one concept at a time."_
+
+Professor Hoof is a patient and experienced study coach who breaks down complex topics into simple explanations. He creates quizzes, flashcards and personalized study plans to help you master any subject.
+
+**Tools:**
+
+- `create_quiz` — Generates quiz questions on any topic
+- `make_flashcard` — Creates flashcards for memorization
+- `suggest_study_plan` — Builds a personalized study schedule
+
+---
+
+### 🍳 Agent 2 — Culinary Expert (Chef Mulisic)
+
+> _"Transforming everyday ingredients into culinary masterpieces."_
+
+Chef Mulisic is a creative and passionate master chef. Whether you need a recipe based on what's in your fridge, want to find a smart ingredient substitute, or need the perfect wine pairing, Chef Mulisic is your guide in the kitchen.
+
+**Tools:**
+
+- `generate_recipe` — Creates a recipe from a list of ingredients
+- `substitute_ingredient` — Finds alternatives for missing ingredients
+- `pair_wine` — Suggests the perfect wine for a specific dish
+
+---
+
+### 💼 Agent 3 — Career Advisor (CV Pro)
+
+> _"Elevating your career, one application at a time."_
+
+CV Pro is a sharp and professional career advisor. By analyzing your online resume links and understanding your target role, CV Pro helps you stand out in the job market with actionable feedback and tailored cover letters.
+
+**Tools:**
+
+- `analyze_cv_link` — Extracts and reviews content from a CV/LinkedIn URL
+- `suggest_improvements` — Gives actionable feedback based on target roles
+- `generate_cover_letter` — Drafts a professional cover letter for a specific job
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology              | Purpose               |
+| ----------------------- | --------------------- |
+| 🐍 Python 3             | Core language         |
+| 🦜 LangChain            | Agent framework       |
+| 🕸️ LangGraph            | Agent execution graph |
+| 🦙 Ollama (llama3.1:8b) | Local LLM backend     |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
 ```bash
-python3.13 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+git clone https://github.com/mulisictarik/nackademin-langchain-demo.git
+cd nackademin-langchain-demo
 ```
-3. Create a `.env` file with your configuration:
+
+### 2. Create and activate virtual environment
+
 ```bash
-OLLAMA_BASE_URL=http://nackademin.icedc.se
-OLLAMA_BEARER_TOKEN=your-bearer-token-here
+python -m venv .venv
+source .venv/Scripts/activate  # Windows
 ```
 
-### Running Examples
-
-Make sure the virtual environment is activated and run from the project root:
+### 3. Install dependencies
 
 ```bash
-source .venv/bin/activate
-python -m examples.agent-lecture.simple_agent
+pip install langchain langchain-ollama langgraph python-dotenv
+```
+
+### 4. Create your `.env` file
+
+```bash
+OLLAMA_BASE_URL=your-ollama-server-url
+OLLAMA_BEARER_TOKEN=your-token-here
+```
+
+## ▶️ Running the Agents
+
+```bash
+# Study Assistant
+python -m agents.study_agent.study_agent
+
+# Culinary Expert
+python -m agents.chef_agent.chef_agent
+
+# Career Advisor
+python -m agents.cv_agent.cv_agent
+
+
+## 👨‍💻 Author & Developer
+
+**Tarik Mulisic**
+*ML OPS Student @ Nackademin*
+
 ```
